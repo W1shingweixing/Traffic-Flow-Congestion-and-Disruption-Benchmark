@@ -1,0 +1,19 @@
+import pickle
+import numpy as np
+
+# 1. Load pkl file
+with open("traffident_counterfactual_samples.pkl", "rb") as f:
+    samples = pickle.load(f)
+
+# 2. Check how many accident samples are packed in this big list
+print(f"Total sample size: {len(samples)}")
+print("-" * 50)
+
+# 3. Sample check
+first_sample = samples[0]
+
+for key, value in first_sample.items():
+    if isinstance(value, np.ndarray):
+        print(f"Key [{key}]: Type = NumPy, shape (Shape)= {value.shape}")
+    else:
+        print(f"Key [{key}]: Value = {value}")
