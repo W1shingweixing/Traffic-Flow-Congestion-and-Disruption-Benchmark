@@ -56,7 +56,7 @@ hour_00 to hour_23 (Int/Float): The raw traffic volume for each of the 24 hours 
 
 ### 4. Final Aggregated Outputs for Modeling
 # final_long_flow_2025.csv
-Description: An intermediate long-form time-series dataset transformed from all_stations_hourly_2025.csv via pd.melt. It applies a prefix-penetration mapping algorithm to strip out hardware leading zeros and correctly map nested child keys back to their parent station IDs.
+Description: An intermediate long-form time-series dataset transformed from stations_hourly_2025.csv via pd.melt. It applies a prefix-penetration mapping algorithm to strip out hardware leading zeros and correctly map nested child keys back to their parent station IDs.
 
 # Schema:
 
