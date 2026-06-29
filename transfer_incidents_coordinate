@@ -1,0 +1,85 @@
+import pandas as pd
+import h3
+from geopy.distance import geodesic
+
+
+# 1. Load two flattened CSV tables.
+
+df_stations = pd.read_csv("roaddetail_2025.csv")
+df_incidents = pd.read_csv("hazards_2025_flattened.csv")
+
+print(f"Successfully imported metadata for {len(df_stations)} active traffic sites.")
+print(f"Successfully imported {len(df_incidents)} of historical incidents after they were flattened.")
+
+
+# 2. Generate H3 spatial fingerprints for two tables in batches (resolution set to 8, covering approximately 0.7 square kilometers).
+
+H3_RES = 8
+
+# Site table to H3
+df_stations['h3_index'] = df_stations.apply(
+    lambda r: h3.latlng_to_cell(r['wgs84_latitude'], r['wgs84_longitude'], H3_RES), axis=1
+)
+
+# Accident form to H3
+df_incidents['h3_index'] = df_incidents.apply(
+    lambda r: h3.latlng_to_cell(r['latitude'], r['longitude'], H3_RES), axis=1
+)
+
+
+# 3. First coarse screening in space: Collision (Merge) using an H3 grid.
+
+# The same h3_index indicates that they reside within the same hexagonal lattice.
+df_merged = pd.merge(df_incidents, df_stations, on='h3_index', how='inner')
+print(f"Within the same H3 cell, {len(df_merged)} pairs of potential intersections were found.")
+
+
+# 4. The Havesing formula is used to calculate the precise physical distance (dis, in kilometers) within a grid.
+def get_exact_distance(row):
+    # Sensor coordinates
+    station_loc = (row['wgs84_latitude'], row['wgs84_longitude'])
+    # Coordinates of the accident site
+    incident_loc = (row['latitude_x'], row['longitude_x'])  # After merging, duplicate columns will automatically have a suffix added. _x usually represents the left table (the incident table).
+    # Calculate precise distances in kilometers, retaining three decimal places (meter-level accuracy).
+    return round(geodesic(station_loc, incident_loc).km, 3)
+
+if not df_merged.empty:
+    # Fixed duplicate name issue
+    if 'latitude_x' not in df_merged.columns:
+        df_merged = df_merged.rename(columns={'latitude': 'latitude_x', 'longitude': 'longitude_x'})
+        
+    df_merged['dis'] = df_merged.apply(get_exact_distance, axis=1)
+
+    # 
+    # 5. Distance threshold filtering: Only traffic accidents within 1.0 km of the station are considered valid interference.
+    # 
+    df_final_matches = df_merged[df_merged['dis'] <= 1.0]
+else:
+    df_final_matches = pd.DataFrame()
+
+# 
+# 6. Standardize the format and output
+# 
+if not df_final_matches.empty:
+    final_columns = [
+        'station_id', 'wgs84_latitude', 'incident_id', 'wgs84_longitude', 'dt', 'dis'
+    ]
+    df_output = df_final_matches[final_columns]
+    
+    # station_id, Abs PM_x, incident_id, Abs PM_y, dt, dis
+    # Here, Abs PM_x and y represent absolute station locations in traffic engineering, and are temporarily replaced by the matched latitude and longitude coordinates.
+    df_output = df_output.rename(columns={
+        'wgs84_latitude': 'Abs PM_x',
+        'wgs84_longitude': 'Abs PM_y'
+    })
+    
+    # Final Save
+    output_filename = "station_incident_alignment_2025.csv"
+    df_output.to_csv(output_filename, index=False, encoding="utf-8")
+    
+    print(f"The final, fully aligned Benchmark test paper comparison table has been generated:{output_filename}")
+    print(f"Contains {len(df_output)} high-value real-world collision chains of sensor-car accident simulations.")
+    print("\nData Preview")
+    print(df_output.head(5).to_string(index=False))
+else:
+    print(" The match result is 0. Please check if the years in the two tables overlap, or change the H3 resolution H3_RES to 7 (increase the cell area) and try again.")
