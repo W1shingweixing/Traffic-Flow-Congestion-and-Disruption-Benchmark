@@ -305,3 +305,22 @@ All station IDs:
   adj_matrix_67_binary.npy   (67, 67)     0/1     (67 stations)
   node_order_nsw.npy         115 station IDs
   node_order_67.npy          67 station IDs
+
+### 7. Source Code
+
+#### # codes_all results.ipynb
+
+* **Description**: The complete Jupyter Notebook containing the full Member 3 pipeline. 
+  All code cells, outputs, and visualisation results are preserved inline. 
+  The notebook can be opened directly in Google Colab or previewed on GitHub.
+
+* **How to run**:
+  * Open in Google Colab
+  * Mount Google Drive or upload the required datasets
+  * Run all cells top to bottom (Runtime → Run all)
+  * All output files will be generated and downloaded automatically
+
+* **Required datasets**:
+  * roaddetail_2025.csv
+  * final_incidents_with_weather.csv
+  * final_hourly_flow_allfeature.csv
