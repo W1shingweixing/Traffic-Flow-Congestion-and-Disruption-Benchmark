@@ -1,6 +1,6 @@
 ### Overview
 
-Source datasets: `roaddetail_2025.csv` · `station_incident_alignment_2025.csv` · `final_incidents_with_weather.csv` · `final_hourly_flow_allfeature.csv`
+Source datasets: `roaddetail_2025.csv`  · `final_incidents_with_weather.csv` · `final_hourly_flow_allfeature.csv`
 
 Libraries: `pandas` · `numpy` · `networkx` · `matplotlib`
 
@@ -154,15 +154,17 @@ adj_matrix_67 = nx.to_numpy_array(G_67, nodelist=node_order_67, weight='weight')
 
 ---
 
-### 4. Visualisation Figures (.png)
+### 4. Visualisation Figures
 
-**fig1_road_network.png**: Geographic map of all 115 stations. Node size and colour (plasma colourmap) encode composite centrality. Blue edges = same-road connections. Green edges = spatial k-NN connections. Red crosses = 400 sampled historical incident locations from `final_incidents_with_weather.csv`. Top-5 stations annotated with station ID and road name.
+#### # Graphs_colab.html
 
-**fig2_centrality_comparison.png**: Grouped bar chart for top-15 stations. Three bars per station: degree (blue), betweenness (red), closeness (green), all normalised to [0, 1].
+**fig1: Geographic map of all 115 stations. Node size and colour (plasma colourmap) encode composite centrality. Blue edges = same-road connections. Green edges = spatial k-NN connections. Red crosses = 400 sampled historical incident locations from `final_incidents_with_weather.csv`. Top-5 stations annotated with station ID and road name.
 
-**fig3_centrality_vs_incidents.png**: Three-panel validation scatter. Each panel plots one centrality metric (x-axis) against historical incident count from `station_incident_alignment_2025.csv` (y-axis), with OLS regression line and Pearson r in the title. Upward slope validates that the graph structure captures real high-risk locations.
+**fig2: Grouped bar chart for top-15 stations. Three bars per station: degree (blue), betweenness (red), closeness (green), all normalised to [0, 1].
 
-**fig4_incident_distribution.png**: Two-panel historical incident analysis. Left: top-10 hazard types by count from `final_incidents_with_weather.csv`. Right: incident count by hour of day (0–23), showing twin peaks at 8–9 AM and 16–17 PM. Informs time-window selection for Tasks 1 and 4.
+**fig3: Three-panel validation scatter. Each panel plots one centrality metric (x-axis) against historical incident count from `station_incident_alignment_2025.csv` (y-axis), with OLS regression line and Pearson r in the title. Upward slope validates that the graph structure captures real high-risk locations.
+
+**fig4: Two-panel historical incident analysis. Left: top-10 hazard types by count from `final_incidents_with_weather.csv`. Right: incident count by hour of day (0–23), showing twin peaks at 8–9 AM and 16–17 PM. Informs time-window selection for Tasks 1 and 4.
 
 ---
 
