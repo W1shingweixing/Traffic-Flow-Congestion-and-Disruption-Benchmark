@@ -1,0 +1,12 @@
+{
+  "graph_nodes": 115,
+  "graph_edges": 436,
+  "giant_component_nodes": 67,
+  "n_connected_components": 18,
+  "dist_threshold_same_road_km": 50.0,
+  "knn_k": 3,
+  "knn_max_km": 15.0,
+  "corr_betweenness_incidents": -0.0698,
+  "corr_degree_incidents": 0.2757,
+  "corr_closeness_incidents": -0.2277
+}
