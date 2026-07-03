@@ -63,19 +63,31 @@
 
 ### 4. Final Deliverables for GNN Modeling & Resilience Analysis
 
-#### # final_hourly_flow_allfeature.csv (Primary Deliverable)
+#### final_hourly_flow_allfeature.csv (Primary Deliverable)
 
-* **Description**: The ultimate project matrix table for Spatiotemporal GNN training and resilience forecasting. Built as a dense grid cross-joining `hourly_flow_final.csv` (as the continuous time-series skeleton) with `final_incidents_with_weather.csv` and static features. It contains bidirectional target flows ($Y$), static road structures, dynamic incident clocks, and weather variables in a single row without any data ambiguity.
+* **Description**: The ultimate project matrix table for Spatiotemporal GNN training and resilience forecasting. Built from official 2025 station roster, sensor-level hourly flows (aggregated from station_key to station_id via reference mapping), and incident-weather fusion table. The dataset is cast as a dense spatiotemporal grid (active_stations × full 2025 hourly timeline) with missing flows imputed to zero; all static road attributes are unified per station_id (mode/mean aggregation); weather features are forward-filled (no future leakage) and incident records are aggregated per (station_id, timestamp) with count tracking. The final table includes bidirectional target flows ($Y$), static node properties, dynamic incident clocks, weather variables, incident frequency, and daytime anomaly flags in a single unambiguous row.
+
 * **Schema**:
-* `station_id` (String): Standard parent station identifier (Adjacency Matrix node key).
-* `timestamp` (DateTime): Standard time-series timestep coordinate.
-* `total_flow` (Float): **The Target Variable ($Y$).** Total road bidirectional hourly volume.
-* `lane_count` (String): Static node layout control feature (e.g., TwoOrMoreLanes).
-* `road_functional_hierarchy` (String): Static node importance bias (e.g., Primary Road).
-* `distance_to_intersection` (Int): Static geographical topology parameter (meters).
+* `station_id` (String): Standard parent station identifier (Adjacency Matrix node key). Uniformly cleaned (strip ".0" and whitespace).
+* `timestamp` (DateTime): Standard time-series timestep coordinate (hourly, 2025-01-01 00:00 to 2025-12-31 23:00).
+* `total_flow` (Float): **The Target Variable ($Y$).** Total road bidirectional hourly volume (summed across all station_keys belonging to the same station_id).
+* `wgs84_latitude` (Float): Static geospatial coordinate (latitude).
+* `wgs84_longitude` (Float): Static geospatial coordinate (longitude).
+* `road_name` (String): Static road name.
+* `suburb` (String): Static suburb name.
+* `post_code` (String): Static postcode.
+* `device_type` (String): Static device classification (e.g., Tirtl).
+* `quality_rating` (String/Int): Static sensor quality rating.
+* `lane_count` (Int): Static node layout control feature (extracted numeric lane number from text, default 2).
+* `road_functional_hierarchy` (Int): Static node importance bias (mapped from text levels: Local=1, Collector=2, Sub-arterial=3, Arterial=4, Primary=5; default 0).
+* `distance_to_intersection` (Float): Static geographical topology parameter (meters, mean-aggregated per station_id, default -1).
 * `incident_id` (String): Unique incident ID. Set to `NO_INCIDENT` during normal state.
-* `is_major_incident` (Float/Int): Dynamic shock indicator (1.0 for major accident, 0.0 for normal).
-* `impact_sequence_hour` (Float/Int): **Resilience Curve Tracking Clock.** Normal hour is `-1.0`; event hours evolve through `0.0, 1.0, 2.0...` to trace degradation and recovery.
-* `precipitation` (Float): Hourly aligned dynamic environmental rain volume feature (mm).
-
- 
+* `is_major_incident` (Int): Dynamic shock indicator (1 for major accident, 0 for normal).
+* `impact_sequence_hour` (Int): **Resilience Curve Tracking Clock.** Normal hour is `-1`; event hours evolve through `0, 1, 2...` to trace degradation and recovery.
+* `precipitation` (Float): Hourly aligned dynamic environmental rain volume feature (mm). Forward-filled per station (no future leakage), missing → 0.0.
+* `weather_code` (Float): WMO weather code from Open-Meteo (forward-filled, missing → 0.0).
+* `apparent_temperature` (Float): Apparent temperature (°C) from Open-Meteo (forward-filled, missing → 0.0).
+* `wind_gusts_10m` (Float): Wind gust speed (km/h) from Open-Meteo (forward-filled, missing → 0.0).
+* `relative_humidity` (Float): Relative humidity (%) from Open-Meteo (forward-filled, missing → 0.0).
+* `incident_count` (Int): Number of active incidents at that (station_id, timestamp). Normal state → 0.
+* `is_anomaly` (Int): Daytime (07:00–19:00) zero‑flow anomaly flag (1 if total_flow == 0 and hour in 7‑19, else 0). Useful for masking sensor failures during training.
