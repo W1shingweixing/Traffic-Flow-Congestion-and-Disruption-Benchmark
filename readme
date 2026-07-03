@@ -57,16 +57,21 @@
 * `queue_length_km` (Float): Detected structural traffic back-up tail length.
 * `traffic_volume_desc` (String): Real-time congestion state density descriptors (e.g., Heavy).
 * `affected_direction` (String): Direction targeted by the block (e.g., Southbound).
-* `precipitation` to `relative_humidity` (Float): Spatiotemporally aligned local meteorological parameters.
-
+** **Weather Fields (from Open-Meteo, hourly matched)**:
+    - `precipitation` (Float): Total precipitation (rain/snow) in mm.
+    - `weather_code` (Float): WMO weather interpretation code.
+    - `apparent_temperature` (Float): Perceived feels-like temperature in °C (combines wind chill, humidity, solar radiation).
+    - `temperature_2m` (Float): Air temperature at 2 meters above ground in °C (more stable than apparent temperature).
+    - `wind_gusts_10m` (Float): Maximum wind gust speed in km/h at 10 meters.
+    - `relative_humidity` (Float): Relative humidity in % (0–100).
 
 
 ### 4. Final Deliverables for GNN Modeling & Resilience Analysis
 
 #### final_hourly_flow_allfeature.csv (Primary Deliverable)
 
-* **Description**: The ultimate project matrix table for Spatiotemporal GNN training and resilience forecasting. Built from official 2025 station roster, sensor-level hourly flows (aggregated from station_key to station_id via reference mapping), and incident-weather fusion table. The dataset is cast as a dense spatiotemporal grid (active_stations × full 2025 hourly timeline) with missing flows imputed to zero; all static road attributes are unified per station_id (mode/mean aggregation); weather features are forward-filled (no future leakage) and incident records are aggregated per (station_id, timestamp) with count tracking. The final table includes bidirectional target flows ($Y$), static node properties, dynamic incident clocks, weather variables, incident frequency, and daytime anomaly flags in a single unambiguous row.
-
+* **Description**: 
+* **Description**: The ultimate project matrix table for Spatiotemporal GNN training and resilience forecasting. Built from official 2025 station roster (`roaddetail_2025.csv`), sensor-level hourly flows (`stations_hourly_2025.csv`) aggregated from `station_key` to `station_id` via reference mapping (`road_traffic_counts_station_reference.csv`), and the incident-weather fusion table (`final_incidents_with_weather.csv`). The dataset is cast as a dense spatiotemporal grid (115 active stations × 8,760 hourly timesteps covering 2025-01-01 00:00 to 2025-12-31 23:00) with missing flows imputed to zero. Static road attributes are unified per `station_id` (mode/mean aggregation); weather features are forward-filled per station (no future leakage) with missing → 0.0; incident records are aggregated per `(station_id, timestamp)` with count tracking. The final table includes bidirectional target flows ($Y$), static node properties, dynamic incident clocks, weather variables (from Open-Meteo with corrected variable alignment), incident frequency, and daytime anomaly flags in a single unambiguous row.
 * **Schema**:
 * `station_id` (String): Standard parent station identifier (Adjacency Matrix node key). Uniformly cleaned (strip ".0" and whitespace).
 * `timestamp` (DateTime): Standard time-series timestep coordinate (hourly, 2025-01-01 00:00 to 2025-12-31 23:00).
@@ -84,9 +89,10 @@
 * `incident_id` (String): Unique incident ID. Set to `NO_INCIDENT` during normal state.
 * `is_major_incident` (Int): Dynamic shock indicator (1 for major accident, 0 for normal).
 * `impact_sequence_hour` (Int): **Resilience Curve Tracking Clock.** Normal hour is `-1`; event hours evolve through `0, 1, 2...` to trace degradation and recovery.
-* `precipitation` (Float): Hourly aligned dynamic environmental rain volume feature (mm). Forward-filled per station (no future leakage), missing → 0.0.
+* `precipitation` (Float): Hourly precipitation (mm) from Open-Meteo. Forward-filled per station (no future leakage), missing → 0.0.
 * `weather_code` (Float): WMO weather code from Open-Meteo (forward-filled, missing → 0.0).
-* `apparent_temperature` (Float): Apparent temperature (°C) from Open-Meteo (forward-filled, missing → 0.0).
+* `apparent_temperature` (Float): Perceived feels-like temperature (°C) from Open-Meteo (forward-filled, missing → 0.0). Corrected retrieval ensures realistic values (range ~ -0.5 to 44.2°C for Sydney).
+* `temperature_2m` (Float): Actual air temperature at 2 meters (°C) from Open-Meteo (forward-filled, missing → 0.0). Provides a more stable temperature indicator for modelling.
 * `wind_gusts_10m` (Float): Wind gust speed (km/h) from Open-Meteo (forward-filled, missing → 0.0).
 * `relative_humidity` (Float): Relative humidity (%) from Open-Meteo (forward-filled, missing → 0.0).
 * `incident_count` (Int): Number of active incidents at that (station_id, timestamp). Normal state → 0.
