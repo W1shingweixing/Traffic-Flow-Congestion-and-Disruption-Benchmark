@@ -13,20 +13,6 @@
 
 ### 2. Intermediate Transforming Data
 
-#### # final_flow_2025_addthreefeature.csv
-
-* **Description**: An intermediate long-form time-series dataset transformed from `stations_hourly_2025.csv` via `pd.melt`. It applies a prefix-penetration mapping algorithm to strip out hardware leading zeros and correctly map nested child keys back to their parent station IDs, while keeping static road geometry properties.
-* **Schema**:
-* `station_key` (String): The cleaned child hardware key without leading zeros.
-* `associated_parent_station_id` (String): The high-level parent station ID.
-* `lane_count` (String): Static road geometry property (e.g., TwoOrMoreLanes).
-* `road_functional_hierarchy` (String): Functional hierarchy (e.g., Primary Road).
-* `distance_to_intersection` (Int): Distance to the nearest intersection in meters.
-* `hour_str` / `hour_int`: The corresponding hour label and integer value (0-23).
-* `flow_dt` (DateTime): The reconstructed standard datetime timestamp.
-* `flow` (Float): The traffic flow captured specifically by that single lane/direction.
-
-
 #### # hourly_flow.csv
 
 * **Description**: The aggregated hourly traffic volume at the station level. It groups `final_flow_2025.csv` data by `['station_id', 'timestamp']` and aggregates all corresponding lane volumes using a `.sum()` operation to form a bidirectional traffic volume baseline.
