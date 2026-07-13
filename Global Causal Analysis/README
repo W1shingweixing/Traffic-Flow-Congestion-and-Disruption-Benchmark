@@ -1,1 +1,203 @@
+# Global Causal Analysis (Task 3)
 
+## What this folder contains
+
+This folder holds everything needed to run the global causal analysis for Task 3.
+It follows the TraffiDent framework (Section 4.4) but uses Lasso regression instead
+of MM-DAG, since MM-DAG has no public implementation.
+
+The analysis asks: **across all 67 NSW sensor stations, what causes what?**
+For example — does rainfall cause more crashes? Does road centrality predict incident frequency?
+
+---
+
+## Files in this folder
+
+| File | What it is |
+|------|-----------|
+| `03_prepare_global_causal.ipynb` | Notebook 1 — loads raw data, builds the variable matrix, saves output files |
+| `04_global_causal_analysis.ipynb` | Notebook 2 — runs causal discovery, produces figures and results |
+| `Global_Causal_Analysis_Info.docx` | Full methodology document — variable definitions, algorithm explanation, how to read results |
+| `global_X.npy` | The final variable matrix used as input to the causal model — shape (N_samples, N_variables) |
+| `variable_names.csv` | List of all variable names and their category (meta / incident / traffic) |
+| `global_variable_matrix.csv` | Same as global_X.npy but as a CSV with station_id and date columns for reference |
+| `global_case_summary.json` | Summary statistics — number of stations, days, samples, and variables |
+
+---
+
+## How to run
+
+**Step 1 — Upload required files to Colab**
+
+You need these files from the `Road network graph` folder and the main data repository:
+
+```
+adj_matrix_67.npy
+adj_matrix_67_binary.npy
+node_order_67.npy
+centrality_rankings.csv
+final_incidents_with_weather.csv
+final_hourly_flow_allfeature.csv   (or the _with_timefeat version)
+```
+
+**Step 2 — Run notebook 03 first**
+
+Open `03_prepare_global_causal.ipynb` in Colab and run all cells top to bottom.
+This notebook reads the raw data and saves four files into a `data_global_causal/` folder:
+- `global_X.npy`
+- `variable_names.csv`
+- `global_variable_matrix.csv`
+- `global_case_summary.json`
+
+You can also skip this step and upload the four files above directly from this GitHub folder.
+
+**Step 3 — Run notebook 04**
+
+Open `04_global_causal_analysis.ipynb` in Colab in the same session (so the
+`data_global_causal/` folder still exists) and run all cells top to bottom.
+
+This notebook will:
+1. Load the variable matrix
+2. Standardise all variables
+3. Apply DAG constraints
+4. Fit Lasso regression to learn causal structure
+5. Save results to `results/global_causal/`
+
+> **Important**: Run both notebooks in the same Colab session without disconnecting.
+> If you disconnect between notebooks, the `data_global_causal/` folder will disappear.
+> In that case, upload the four files from this GitHub folder directly.
+
+---
+
+## What the variable matrix contains
+
+Each row is one daily observation at one station.
+Variables are grouped into three categories following TraffiDent Table 7:
+
+### Meta-feature variables
+These describe the environment and road structure.
+They **cannot be caused by** other variables (enforced as a DAG constraint).
+
+| Variable | Description |
+|----------|-------------|
+| `is_weekend` | 1 if Saturday or Sunday, 0 otherwise |
+| `precipitation_daily` | Total rainfall for the day (mm) |
+| `degree_cent` | How many direct neighbours this station has in the road graph |
+| `between_cent` | How often this station sits on shortest paths between other stations (bottleneck indicator) |
+| `close_cent` | How quickly disruption at this station spreads to all others |
+
+### Incident variables
+These count how many of each hazard type occurred near the station on that day.
+They can be caused by meta-features (e.g. rain → more crashes).
+
+| Variable | Description |
+|----------|-------------|
+| `crash` | Number of CRASH incidents |
+| `breakdown` | Number of BREAKDOWN incidents |
+| `hazard` | Number of HAZARD incidents (obstacles, spillage, etc.) |
+| `scheduled_roadwork` | Number of SCHEDULED ROADWORK events |
+| *(other types)* | One column per unique hazard type in the dataset |
+
+### Traffic statistics
+These are the outcomes of the traffic system.
+They **cannot cause** other variables (enforced as a DAG constraint).
+
+| Variable | Description |
+|----------|-------------|
+| `mean_flow_hourly` | Average hourly traffic flow across the day |
+| `is_major_incident` | 1 if any major incident occurred at this station on this day |
+| `impact_hours` | Number of hours the station was affected by an active incident |
+
+---
+
+## DAG constraints
+
+Two structural constraints from TraffiDent Section 4.4 are enforced:
+
+**Constraint 1** — No edges can point toward meta-feature variables.
+Meta-features are environmental and infrastructural — the day of the week
+cannot be caused by traffic flow.
+
+**Constraint 2** — Traffic statistics cannot direct edges toward other variables.
+Traffic statistics represent outcomes of the system, not causes.
+
+These are implemented as `tabu_edges` — a list of forbidden (source, target) index pairs
+that the algorithm is not allowed to learn weights for.
+
+---
+
+## Algorithm
+
+We use **Lasso regression** (L1-regularised linear regression) as a practical
+alternative to TraffiDent's MM-DAG algorithm.
+
+For each target variable, we regress it on all eligible predictor variables.
+The L1 penalty automatically shrinks unimportant coefficients to zero,
+keeping only variables with genuine predictive power.
+A non-zero coefficient from variable A to variable B is interpreted as a causal link.
+
+The result is a weight matrix **W** where:
+- `W[i, j] > 0` means variable i **positively causes** variable j
+- `W[i, j] < 0` means variable i **negatively causes** variable j
+- `W[i, j] = 0` means no significant causal relationship
+
+**Why not MM-DAG?**
+MM-DAG handles mixed scalar and functional (time-series) data using functional
+principal component analysis. It has no public open-source implementation.
+Lasso regression produces comparable DAG structure results for scalar data
+and is fully reproducible with standard scikit-learn.
+
+---
+
+## How to read the output figures
+
+**global_causal_graph.png**
+- Blue nodes = meta-feature variables
+- Orange nodes = incident variables
+- Green nodes = traffic statistics
+- Red arrows = positive causal effect (A increases → B increases)
+- Blue arrows = negative causal effect (A increases → B decreases)
+- Thicker arrow = stronger causal effect
+
+**global_causal_heatmap.png**
+- Rows = source variables, columns = target variables
+- Red cell = positive causal weight
+- Blue cell = negative causal weight
+- White cell = no significant relationship (weight below threshold)
+
+**significant_causal_links.csv**
+
+| Column | Meaning |
+|--------|---------|
+| `source` | The causing variable |
+| `target` | The affected variable |
+| `source_cat` / `target_cat` | Category of each variable |
+| `weight` | Causal coefficient — sign and magnitude |
+| `direction` | `positive` or `negative` |
+| `abs_weight` | Absolute weight — used for ranking by strength |
+
+---
+
+## Relationship to TraffiDent
+
+| Aspect | TraffiDent (MM-DAG) | This work (Lasso) |
+|--------|--------------------|--------------------|
+| Algorithm | MM-DAG (score-based, multi-modal) | Lasso regression (L1 regularisation) |
+| Data types | Scalar + functional time-series | Scalar (daily aggregates) |
+| Stations | 16,972 sensors, 4 districts | 67 NSW stations |
+| Time span | 3 years (2022–2024) | 1 year (2025) |
+| Variable categories | 3 (meta, incident, traffic) | 3 (same structure) |
+| DAG constraints | Same 2 constraints | Same 2 constraints |
+
+---
+
+## Expected findings
+
+Based on TraffiDent Figure 5 and general traffic knowledge:
+
+- **Road structure matters**: betweenness and closeness centrality are expected to
+  show causal links to incident counts — high-centrality stations see more incidents.
+- **Weather affects incidents**: precipitation is expected to positively cause crash counts.
+- **Weekdays see more incidents**: is_weekend = 0 is expected to associate with higher
+  hazard and breakdown counts during peak commuting hours.
+- **Incidents reduce flow**: incident variables are expected to negatively cause mean_flow_hourly.
