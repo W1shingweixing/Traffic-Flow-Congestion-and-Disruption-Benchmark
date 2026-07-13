@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d92be906c8f2387757f600cfd6248cdb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d92be906c8f2387757f600cfd6248cdb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d92be906c8f2387757f600cfd6248cdb = L.map(
+                "map_d92be906c8f2387757f600cfd6248cdb",
+                {
+                    center: [-33.8127996, 150.9756134],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b9030fc0d46628b36cd634101addb3a7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b9030fc0d46628b36cd634101addb3a7.addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var marker_a59acd8752fa7321417011edc94f343b = L.marker(
+                [-33.796436, 150.987595],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var icon_1efce8afc1506ac6814942c7de4c4866 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cff05f4e666997e83c6036e805274d32 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a20510eb036b6cbef6d302f0366cc35 = $(`<div id="html_0a20510eb036b6cbef6d302f0366cc35" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 50240<br>         <b>Road:</b> Briens Road<br>         <b>Suburb:</b> Northmead<br>         <b>Traffic change:</b> -56.7%<br>         <b>Abnormal flow:</b> -477.7 veh/hour         </div>`)[0];
+                popup_cff05f4e666997e83c6036e805274d32.setContent(html_0a20510eb036b6cbef6d302f0366cc35);
+            
+        
+
+        marker_a59acd8752fa7321417011edc94f343b.bindPopup(popup_cff05f4e666997e83c6036e805274d32)
+        ;
+
+        
+    
+    
+            marker_a59acd8752fa7321417011edc94f343b.bindTooltip(
+                `<div>
+                     Station 50240
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a59acd8752fa7321417011edc94f343b.setIcon(icon_1efce8afc1506ac6814942c7de4c4866);
+            
+    
+            var marker_60149d0c14a1907b895f3854226ed347 = L.marker(
+                [-33.796436, 150.987595],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var div_icon_01f54088e4b178f6a869dc57fadd754e = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    font-size: 12px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: 1px solid black;\n                    padding: 2px;\n                    border-radius: 3px;\"\u003e\n                    50240\n                \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_60149d0c14a1907b895f3854226ed347.setIcon(div_icon_01f54088e4b178f6a869dc57fadd754e);
+            
+    
+            var marker_d1845785ed6bd34e225a1b706a8698ed = L.marker(
+                [-33.816696, 150.976623],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var icon_b50052ec55bd470a519c4e7c57d8e1f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4394a7f0b22b783e965833456845d04e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4248d6bcc8dd052947272b6b6f3a0cf6 = $(`<div id="html_4248d6bcc8dd052947272b6b6f3a0cf6" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 68025<br>         <b>Road:</b> Great Western Highway<br>         <b>Suburb:</b> South Wentworthville<br>         <b>Traffic change:</b> 112.2%<br>         <b>Abnormal flow:</b> 591.8 veh/hour         </div>`)[0];
+                popup_4394a7f0b22b783e965833456845d04e.setContent(html_4248d6bcc8dd052947272b6b6f3a0cf6);
+            
+        
+
+        marker_d1845785ed6bd34e225a1b706a8698ed.bindPopup(popup_4394a7f0b22b783e965833456845d04e)
+        ;
+
+        
+    
+    
+            marker_d1845785ed6bd34e225a1b706a8698ed.bindTooltip(
+                `<div>
+                     Station 68025
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d1845785ed6bd34e225a1b706a8698ed.setIcon(icon_b50052ec55bd470a519c4e7c57d8e1f6);
+            
+    
+            var marker_09ec0287f791f9da1b995344f8f868eb = L.marker(
+                [-33.816696, 150.976623],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var div_icon_f843a52eb587a77ddb36651b4a3c1e80 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    font-size: 12px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: 1px solid black;\n                    padding: 2px;\n                    border-radius: 3px;\"\u003e\n                    68025\n                \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_09ec0287f791f9da1b995344f8f868eb.setIcon(div_icon_f843a52eb587a77ddb36651b4a3c1e80);
+            
+    
+            var marker_81dfe58412de9c45c0bd6458fc0feca9 = L.marker(
+                [-33.817974, 150.981827],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var icon_82b4597fe320ab2f59a5782b2e80e5fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38a6545f134382769af503d930389952 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e368c2a3559ee28b43a4236554c14166 = $(`<div id="html_e368c2a3559ee28b43a4236554c14166" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 7119-PR<br>         <b>Road:</b> Hawkesbury Road<br>         <b>Suburb:</b> Merrylands<br>         <b>Traffic change:</b> 42.1%<br>         <b>Abnormal flow:</b> 174.7 veh/hour         </div>`)[0];
+                popup_38a6545f134382769af503d930389952.setContent(html_e368c2a3559ee28b43a4236554c14166);
+            
+        
+
+        marker_81dfe58412de9c45c0bd6458fc0feca9.bindPopup(popup_38a6545f134382769af503d930389952)
+        ;
+
+        
+    
+    
+            marker_81dfe58412de9c45c0bd6458fc0feca9.bindTooltip(
+                `<div>
+                     Station 7119-PR
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81dfe58412de9c45c0bd6458fc0feca9.setIcon(icon_82b4597fe320ab2f59a5782b2e80e5fc);
+            
+    
+            var marker_2f50d2db834c1d647510169bdac417fc = L.marker(
+                [-33.817974, 150.981827],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var div_icon_02270b90ccf7ca872d4568c55508bf04 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    font-size: 12px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: 1px solid black;\n                    padding: 2px;\n                    border-radius: 3px;\"\u003e\n                    7119-PR\n                \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_2f50d2db834c1d647510169bdac417fc.setIcon(div_icon_02270b90ccf7ca872d4568c55508bf04);
+            
+    
+            var marker_3d85fc0acf6cce1f20b4ed4b66b8a74a = L.marker(
+                [-33.81562, 150.969238],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var icon_79181ef95d63c508c9db69ec9ad3c0ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8690888aca68aad200e4ccff79b8e54 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d731dd36c7acf25dee6fb3b3f1e9adeb = $(`<div id="html_d731dd36c7acf25dee6fb3b3f1e9adeb" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 7164<br>         <b>Road:</b> Great Western Highway<br>         <b>Suburb:</b> South Wentworthville<br>         <b>Traffic change:</b> -63.4%<br>         <b>Abnormal flow:</b> -165.8 veh/hour         </div>`)[0];
+                popup_d8690888aca68aad200e4ccff79b8e54.setContent(html_d731dd36c7acf25dee6fb3b3f1e9adeb);
+            
+        
+
+        marker_3d85fc0acf6cce1f20b4ed4b66b8a74a.bindPopup(popup_d8690888aca68aad200e4ccff79b8e54)
+        ;
+
+        
+    
+    
+            marker_3d85fc0acf6cce1f20b4ed4b66b8a74a.bindTooltip(
+                `<div>
+                     Station 7164
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d85fc0acf6cce1f20b4ed4b66b8a74a.setIcon(icon_79181ef95d63c508c9db69ec9ad3c0ae);
+            
+    
+            var marker_607dd1076c16b3dde3fd3b10c7351bfc = L.marker(
+                [-33.81562, 150.969238],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var div_icon_081acfccda234886feb5c5417368fb70 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    font-size: 12px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: 1px solid black;\n                    padding: 2px;\n                    border-radius: 3px;\"\u003e\n                    7164\n                \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_607dd1076c16b3dde3fd3b10c7351bfc.setIcon(div_icon_081acfccda234886feb5c5417368fb70);
+            
+    
+            var marker_3daaa4957cb27f1472c0e8a2234b2103 = L.marker(
+                [-33.817272, 150.962784],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var icon_ab6cccb242ecab5df74fb95031382b99 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a75cb17ae79b613e078f505a0456dfe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efc6bbbdfa567bbfa53ef94d74ccafac = $(`<div id="html_efc6bbbdfa567bbfa53ef94d74ccafac" style="width: 100.0%; height: 100.0%;">         <b>Station:</b> 7179<br>         <b>Road:</b> Jersey Road<br>         <b>Suburb:</b> South Wentworthville<br>         <b>Traffic change:</b> 68.9%<br>         <b>Abnormal flow:</b> 600.2 veh/hour         </div>`)[0];
+                popup_1a75cb17ae79b613e078f505a0456dfe.setContent(html_efc6bbbdfa567bbfa53ef94d74ccafac);
+            
+        
+
+        marker_3daaa4957cb27f1472c0e8a2234b2103.bindPopup(popup_1a75cb17ae79b613e078f505a0456dfe)
+        ;
+
+        
+    
+    
+            marker_3daaa4957cb27f1472c0e8a2234b2103.bindTooltip(
+                `<div>
+                     Station 7179
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3daaa4957cb27f1472c0e8a2234b2103.setIcon(icon_ab6cccb242ecab5df74fb95031382b99);
+            
+    
+            var marker_dca7e7c78babbecee854550963cd212f = L.marker(
+                [-33.817272, 150.962784],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var div_icon_7e69f748ecf06fd99913ea8f2ffa782d = L.divIcon({
+  "html": "\n                \u003cdiv style=\"\n                    font-size: 12px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: 1px solid black;\n                    padding: 2px;\n                    border-radius: 3px;\"\u003e\n                    7179\n                \u003c/div\u003e\n                ",
+  "className": "empty",
+});
+        
+    
+                marker_dca7e7c78babbecee854550963cd212f.setIcon(div_icon_7e69f748ecf06fd99913ea8f2ffa782d);
+            
+    
+            var marker_fd498a74fba141535213999c5bcf6b55 = L.marker(
+                [-33.817974, 150.981827],
+                {
+}
+            ).addTo(map_d92be906c8f2387757f600cfd6248cdb);
+        
+    
+            var icon_461dc33a929ec0c8d99fc0d707270d8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e89d677a423377788d9939b4b168c3e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1253144e8a90e8b5804ee0a06cde64fe = $(`<div id="html_1253144e8a90e8b5804ee0a06cde64fe" style="width: 100.0%; height: 100.0%;">             <b>Incident:</b> 240298-webtirf<br>             <b>Matched station:</b> 7119-PR             </div>`)[0];
+                popup_8e89d677a423377788d9939b4b168c3e.setContent(html_1253144e8a90e8b5804ee0a06cde64fe);
+            
+        
+
+        marker_fd498a74fba141535213999c5bcf6b55.bindPopup(popup_8e89d677a423377788d9939b4b168c3e)
+        ;
+
+        
+    
+    
+            marker_fd498a74fba141535213999c5bcf6b55.bindTooltip(
+                `<div>
+                     Incident: 240298-webtirf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fd498a74fba141535213999c5bcf6b55.setIcon(icon_461dc33a929ec0c8d99fc0d707270d8e);
+            
+    
+                var lat_lng_popup_946ae761efee2d7a0c026d9703e54a84 = L.popup();
+                function latLngPop(e) {
+                    lat_lng_popup_946ae761efee2d7a0c026d9703e54a84
+                        .setLatLng(e.latlng)
+                        .setContent("Latitude: " + e.latlng.lat.toFixed(4) +
+                                    "<br>Longitude: " + e.latlng.lng.toFixed(4))
+                        .openOn(map_d92be906c8f2387757f600cfd6248cdb);
+                    }
+                map_d92be906c8f2387757f600cfd6248cdb.on('click', latLngPop);
+            
+</script>
+</html>

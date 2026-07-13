@@ -1,0 +1,2 @@
+selected_incident,selected_station,hazard_type,major_incident,incident_duration_hours,incident_distance_km,max_impact_hour,hourly_records,num_local_stations,num_local_incidents,num_flow_hours,flow_variables
+240298-webtirf,7119-PR,CRASH,1,3.304604722222222,0.004,3,4,5,281,8760,5

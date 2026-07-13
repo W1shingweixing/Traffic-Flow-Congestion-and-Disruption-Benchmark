@@ -1,0 +1,6 @@
+station_id,wgs84_latitude,wgs84_longitude,road_name,suburb,post_code,device_type,quality_rating,lane_count,road_functional_hierarchy,distance_to_intersection
+50240,-33.796436,150.987595,Briens Road,Northmead,2152,Tirtl,4,2,0,90.0
+68025,-33.816696,150.976623,Great Western Highway,South Wentworthville,2145,Tirtl,4,2,5,240.0
+7119-PR,-33.817974,150.981827,Hawkesbury Road,Merrylands,2160,Tirtl,5,2,0,10.0
+7164,-33.81562,150.969238,Great Western Highway,South Wentworthville,2145,Tirtl,5,2,5,20.0
+7179,-33.817272,150.962784,Jersey Road,South Wentworthville,2145,Tirtl,5,2,1,40.0
