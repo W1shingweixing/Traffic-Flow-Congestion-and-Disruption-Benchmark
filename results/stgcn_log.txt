@@ -1,0 +1,119 @@
+
+============================================================
+Running Strategy: GENERAL
+============================================================
+    Epoch   1 | Val MAE 0.7367 (best inf)
+    Epoch   2 | Val MAE 0.7466 (best 0.7367)
+    Epoch   3 | Val MAE 0.7491 (best 0.7367)
+    Epoch   5 | Val MAE 0.7489 (best 0.7367)
+    Epoch   7 | Val MAE 0.7492 (best 0.7367)
+    Epoch   9 | Val MAE 0.7489 (best 0.7367)
+    Epoch  11 | Val MAE 0.7501 (best 0.7367)
+    Epoch  13 | Val MAE 0.7483 (best 0.7367)
+    Epoch  15 | Val MAE 0.7492 (best 0.7367)
+    Epoch   1 | Val MAE 0.7361 (best inf)
+    Epoch   2 | Val MAE 0.7472 (best 0.7361)
+    Epoch   3 | Val MAE 0.7507 (best 0.7361)
+    Epoch   5 | Val MAE 0.7485 (best 0.7361)
+    Epoch   7 | Val MAE 0.7501 (best 0.7361)
+    Epoch   9 | Val MAE 0.7497 (best 0.7361)
+    Epoch  11 | Val MAE 0.7478 (best 0.7361)
+    Epoch  13 | Val MAE 0.7506 (best 0.7361)
+    Epoch  15 | Val MAE 0.7505 (best 0.7361)
+    Epoch   1 | Val MAE 0.7360 (best inf)
+    Epoch   2 | Val MAE 0.7468 (best 0.7360)
+    Epoch   3 | Val MAE 0.7490 (best 0.7360)
+    Epoch   5 | Val MAE 0.7502 (best 0.7360)
+    Epoch   7 | Val MAE 0.7499 (best 0.7360)
+    Epoch   9 | Val MAE 0.7497 (best 0.7360)
+    Epoch  11 | Val MAE 0.7496 (best 0.7360)
+    Epoch  13 | Val MAE 0.7511 (best 0.7360)
+    Epoch  15 | Val MAE 0.7504 (best 0.7360)
+  Seed 42: Val MAE=0.7367  Test MAE=0.6880
+  Seed 123: Val MAE=0.7361  Test MAE=0.6884
+  Seed 777: Val MAE=0.7360  Test MAE=0.6876
+
+============================================================
+Running Strategy: BINARY
+============================================================
+    Epoch   1 | Val MAE 0.7354 (best inf)
+    Epoch   2 | Val MAE 0.7469 (best 0.7354)
+    Epoch   3 | Val MAE 0.7505 (best 0.7354)
+    Epoch   5 | Val MAE 0.7497 (best 0.7354)
+    Epoch   7 | Val MAE 0.7504 (best 0.7354)
+    Epoch   9 | Val MAE 0.7501 (best 0.7354)
+    Epoch  11 | Val MAE 0.7507 (best 0.7354)
+    Epoch  13 | Val MAE 0.7495 (best 0.7354)
+    Epoch  15 | Val MAE 0.7515 (best 0.7354)
+    Epoch   1 | Val MAE 0.7363 (best inf)
+    Epoch   2 | Val MAE 0.7476 (best 0.7363)
+    Epoch   3 | Val MAE 0.7491 (best 0.7363)
+    Epoch   5 | Val MAE 0.7506 (best 0.7363)
+    Epoch   7 | Val MAE 0.7503 (best 0.7363)
+    Epoch   9 | Val MAE 0.7500 (best 0.7363)
+    Epoch  11 | Val MAE 0.7496 (best 0.7363)
+    Epoch  13 | Val MAE 0.7509 (best 0.7363)
+    Epoch  15 | Val MAE 0.7502 (best 0.7363)
+    Epoch   1 | Val MAE 0.7353 (best inf)
+    Epoch   2 | Val MAE 0.7474 (best 0.7353)
+    Epoch   3 | Val MAE 0.7497 (best 0.7353)
+    Epoch   5 | Val MAE 0.7500 (best 0.7353)
+    Epoch   7 | Val MAE 0.7483 (best 0.7353)
+    Epoch   9 | Val MAE 0.7513 (best 0.7353)
+    Epoch  11 | Val MAE 0.7488 (best 0.7353)
+    Epoch  13 | Val MAE 0.7500 (best 0.7353)
+    Epoch  15 | Val MAE 0.7498 (best 0.7353)
+  Seed 42: Val MAE=0.7354  Test MAE=0.6878
+  Seed 123: Val MAE=0.7363  Test MAE=0.6882
+  Seed 777: Val MAE=0.7353  Test MAE=0.6881
+
+============================================================
+Running Strategy: TYPEEMB
+============================================================
+    Epoch   1 | Val MAE 0.7353 (best inf)
+    Epoch   2 | Val MAE 0.7469 (best 0.7353)
+    Epoch   3 | Val MAE 0.7498 (best 0.7353)
+    Epoch   5 | Val MAE 0.7505 (best 0.7353)
+    Epoch   7 | Val MAE 0.7505 (best 0.7353)
+    Epoch   9 | Val MAE 0.7503 (best 0.7353)
+    Epoch  11 | Val MAE 0.7496 (best 0.7353)
+    Epoch  13 | Val MAE 0.7492 (best 0.7353)
+    Epoch  15 | Val MAE 0.7502 (best 0.7353)
+    Epoch   1 | Val MAE 0.7354 (best inf)
+    Epoch   2 | Val MAE 0.7476 (best 0.7354)
+    Epoch   3 | Val MAE 0.7492 (best 0.7354)
+    Epoch   5 | Val MAE 0.7492 (best 0.7354)
+    Epoch   7 | Val MAE 0.7499 (best 0.7354)
+    Epoch   9 | Val MAE 0.7496 (best 0.7354)
+    Epoch  11 | Val MAE 0.7505 (best 0.7354)
+    Epoch  13 | Val MAE 0.7496 (best 0.7354)
+    Epoch  15 | Val MAE 0.7495 (best 0.7354)
+    Epoch   1 | Val MAE 0.7360 (best inf)
+    Epoch   2 | Val MAE 0.7469 (best 0.7360)
+    Epoch   3 | Val MAE 0.7476 (best 0.7360)
+    Epoch   5 | Val MAE 0.7494 (best 0.7360)
+    Epoch   7 | Val MAE 0.7497 (best 0.7360)
+    Epoch   9 | Val MAE 0.7495 (best 0.7360)
+    Epoch  11 | Val MAE 0.7498 (best 0.7360)
+    Epoch  13 | Val MAE 0.7517 (best 0.7360)
+    Epoch  15 | Val MAE 0.7511 (best 0.7360)
+  Seed 42: Val MAE=0.7353  Test MAE=0.6874
+  Seed 123: Val MAE=0.7354  Test MAE=0.6878
+  Seed 777: Val MAE=0.7360  Test MAE=0.6879
+
+============================================================
+FINAL RESULTS — STGCN Model
+============================================================
+Strategy       MAE-1h   MAE-3h   MAE-6h  MAE-avg  MAPE-1h  MAPE-3h  MAPE-6h  RMSE-1h  RMSE-3h  RMSE-6h
+------------------------------------------------------------------------------------------------------
+general        0.6875   0.6882   0.6882   0.6880  167.35%  282.44%  166.90%   1.2739   1.2748   1.2756
+binary         0.6875   0.6878   0.6882   0.6880  167.03%  280.69%  165.78%   1.2738   1.2738   1.2742
+typeemb        0.6879   0.6882   0.6876   0.6877  166.35%  280.93%  164.79%   1.2729   1.2731   1.2718
+
+Ablation Deltas:
+  D1 (Binary - General) 1h: -0.0000
+  D1 (Binary - General) 3h: -0.0004
+  D1 (Binary - General) 6h: +0.0000
+  D2 (TypeEmb - Binary) 1h: +0.0004
+  D2 (TypeEmb - Binary) 3h: +0.0005
+  D2 (TypeEmb - Binary) 6h: -0.0006

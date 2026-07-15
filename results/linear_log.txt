@@ -1,0 +1,189 @@
+
+============================================================
+Running Strategy: GENERAL
+============================================================
+  Seed 42 ...
+    Epoch   1 | Train Loss 0.3225 | Val MAE 0.3911 (best inf)
+    Epoch   2 | Train Loss 0.3112 | Val MAE 0.3893 (best 0.3911)
+    Epoch   3 | Train Loss 0.3113 | Val MAE 0.3863 (best 0.3893)
+    Epoch   5 | Train Loss 0.3112 | Val MAE 0.3918 (best 0.3863)
+    Epoch   7 | Train Loss 0.3112 | Val MAE 0.3870 (best 0.3863)
+    Epoch   9 | Train Loss 0.3112 | Val MAE 0.3849 (best 0.3863)
+    Epoch  11 | Train Loss 0.3112 | Val MAE 0.3892 (best 0.3849)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3919 (best 0.3849)
+    Epoch  15 | Train Loss 0.3112 | Val MAE 0.3878 (best 0.3849)
+    Epoch  17 | Train Loss 0.3113 | Val MAE 0.3912 (best 0.3849)
+    Epoch  19 | Train Loss 0.3111 | Val MAE 0.3880 (best 0.3849)
+    Epoch  21 | Train Loss 0.3112 | Val MAE 0.3907 (best 0.3849)
+    Epoch  23 | Train Loss 0.3114 | Val MAE 0.3924 (best 0.3849)
+    Early stopping at epoch 24
+    Val  MAE avg: 0.3849 | Test MAE avg: 0.3509
+  Seed 123 ...
+    Epoch   1 | Train Loss 0.3230 | Val MAE 0.3919 (best inf)
+    Epoch   2 | Train Loss 0.3114 | Val MAE 0.3879 (best 0.3919)
+    Epoch   3 | Train Loss 0.3113 | Val MAE 0.3874 (best 0.3879)
+    Epoch   5 | Train Loss 0.3113 | Val MAE 0.3846 (best 0.3874)
+    Epoch   7 | Train Loss 0.3112 | Val MAE 0.3908 (best 0.3846)
+    Epoch   9 | Train Loss 0.3112 | Val MAE 0.3858 (best 0.3846)
+    Epoch  11 | Train Loss 0.3111 | Val MAE 0.3882 (best 0.3846)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3849 (best 0.3846)
+    Epoch  15 | Train Loss 0.3111 | Val MAE 0.3891 (best 0.3845)
+    Epoch  17 | Train Loss 0.3112 | Val MAE 0.3873 (best 0.3845)
+    Epoch  19 | Train Loss 0.3111 | Val MAE 0.3900 (best 0.3842)
+    Epoch  21 | Train Loss 0.3111 | Val MAE 0.3885 (best 0.3842)
+    Epoch  23 | Train Loss 0.3112 | Val MAE 0.3882 (best 0.3842)
+    Epoch  25 | Train Loss 0.3112 | Val MAE 0.3856 (best 0.3842)
+    Epoch  27 | Train Loss 0.3110 | Val MAE 0.3877 (best 0.3842)
+    Epoch  29 | Train Loss 0.3112 | Val MAE 0.3875 (best 0.3842)
+    Epoch  31 | Train Loss 0.3112 | Val MAE 0.3960 (best 0.3842)
+    Epoch  33 | Train Loss 0.3111 | Val MAE 0.3851 (best 0.3842)
+    Early stopping at epoch 33
+    Val  MAE avg: 0.3842 | Test MAE avg: 0.3511
+  Seed 777 ...
+    Epoch   1 | Train Loss 0.3230 | Val MAE 0.3888 (best inf)
+    Epoch   2 | Train Loss 0.3113 | Val MAE 0.3853 (best 0.3888)
+    Epoch   3 | Train Loss 0.3112 | Val MAE 0.3849 (best 0.3853)
+    Epoch   5 | Train Loss 0.3112 | Val MAE 0.3976 (best 0.3849)
+    Epoch   7 | Train Loss 0.3111 | Val MAE 0.4014 (best 0.3849)
+    Epoch   9 | Train Loss 0.3111 | Val MAE 0.3845 (best 0.3849)
+    Epoch  11 | Train Loss 0.3113 | Val MAE 0.3919 (best 0.3845)
+    Epoch  13 | Train Loss 0.3111 | Val MAE 0.3878 (best 0.3845)
+    Epoch  15 | Train Loss 0.3110 | Val MAE 0.3882 (best 0.3845)
+    Epoch  17 | Train Loss 0.3113 | Val MAE 0.3928 (best 0.3845)
+    Epoch  19 | Train Loss 0.3112 | Val MAE 0.3901 (best 0.3845)
+    Epoch  21 | Train Loss 0.3112 | Val MAE 0.3888 (best 0.3845)
+    Epoch  23 | Train Loss 0.3112 | Val MAE 0.3948 (best 0.3845)
+    Early stopping at epoch 24
+    Val  MAE avg: 0.3845 | Test MAE avg: 0.3514
+
+============================================================
+Running Strategy: BINARY
+============================================================
+  Seed 42 ...
+    Epoch   1 | Train Loss 0.3223 | Val MAE 0.3923 (best inf)
+    Epoch   2 | Train Loss 0.3113 | Val MAE 0.3886 (best 0.3923)
+    Epoch   3 | Train Loss 0.3112 | Val MAE 0.3899 (best 0.3886)
+    Epoch   5 | Train Loss 0.3111 | Val MAE 0.3900 (best 0.3886)
+    Epoch   7 | Train Loss 0.3112 | Val MAE 0.3878 (best 0.3875)
+    Epoch   9 | Train Loss 0.3111 | Val MAE 0.3890 (best 0.3855)
+    Epoch  11 | Train Loss 0.3111 | Val MAE 0.3876 (best 0.3855)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3914 (best 0.3855)
+    Epoch  15 | Train Loss 0.3111 | Val MAE 0.3938 (best 0.3855)
+    Epoch  17 | Train Loss 0.3112 | Val MAE 0.3851 (best 0.3855)
+    Epoch  19 | Train Loss 0.3112 | Val MAE 0.3880 (best 0.3851)
+    Epoch  21 | Train Loss 0.3112 | Val MAE 0.3879 (best 0.3851)
+    Epoch  23 | Train Loss 0.3112 | Val MAE 0.3873 (best 0.3851)
+    Epoch  25 | Train Loss 0.3112 | Val MAE 0.3916 (best 0.3851)
+    Epoch  27 | Train Loss 0.3113 | Val MAE 0.3858 (best 0.3851)
+    Epoch  29 | Train Loss 0.3113 | Val MAE 0.3869 (best 0.3851)
+    Epoch  31 | Train Loss 0.3112 | Val MAE 0.3915 (best 0.3851)
+    Early stopping at epoch 32
+    Val  MAE avg: 0.3851 | Test MAE avg: 0.3506
+  Seed 123 ...
+    Epoch   1 | Train Loss 0.3234 | Val MAE 0.3908 (best inf)
+    Epoch   2 | Train Loss 0.3114 | Val MAE 0.3871 (best 0.3908)
+    Epoch   3 | Train Loss 0.3111 | Val MAE 0.3922 (best 0.3871)
+    Epoch   5 | Train Loss 0.3112 | Val MAE 0.3871 (best 0.3852)
+    Epoch   7 | Train Loss 0.3111 | Val MAE 0.3908 (best 0.3852)
+    Epoch   9 | Train Loss 0.3113 | Val MAE 0.3855 (best 0.3852)
+    Epoch  11 | Train Loss 0.3112 | Val MAE 0.3892 (best 0.3852)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3843 (best 0.3849)
+    Epoch  15 | Train Loss 0.3113 | Val MAE 0.3839 (best 0.3843)
+    Epoch  17 | Train Loss 0.3111 | Val MAE 0.3858 (best 0.3839)
+    Epoch  19 | Train Loss 0.3111 | Val MAE 0.3877 (best 0.3839)
+    Epoch  21 | Train Loss 0.3112 | Val MAE 0.3876 (best 0.3839)
+    Epoch  23 | Train Loss 0.3111 | Val MAE 0.3940 (best 0.3839)
+    Epoch  25 | Train Loss 0.3111 | Val MAE 0.3948 (best 0.3839)
+    Epoch  27 | Train Loss 0.3113 | Val MAE 0.3891 (best 0.3839)
+    Epoch  29 | Train Loss 0.3112 | Val MAE 0.3889 (best 0.3839)
+    Early stopping at epoch 30
+    Val  MAE avg: 0.3839 | Test MAE avg: 0.3498
+  Seed 777 ...
+    Epoch   1 | Train Loss 0.3227 | Val MAE 0.3868 (best inf)
+    Epoch   2 | Train Loss 0.3112 | Val MAE 0.3855 (best 0.3868)
+    Epoch   3 | Train Loss 0.3113 | Val MAE 0.3915 (best 0.3855)
+    Epoch   5 | Train Loss 0.3112 | Val MAE 0.3899 (best 0.3855)
+    Epoch   7 | Train Loss 0.3111 | Val MAE 0.3882 (best 0.3855)
+    Epoch   9 | Train Loss 0.3112 | Val MAE 0.3896 (best 0.3842)
+    Epoch  11 | Train Loss 0.3113 | Val MAE 0.3868 (best 0.3842)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3867 (best 0.3842)
+    Epoch  15 | Train Loss 0.3112 | Val MAE 0.3931 (best 0.3842)
+    Epoch  17 | Train Loss 0.3112 | Val MAE 0.3934 (best 0.3842)
+    Epoch  19 | Train Loss 0.3112 | Val MAE 0.3843 (best 0.3842)
+    Epoch  21 | Train Loss 0.3111 | Val MAE 0.3903 (best 0.3842)
+    Epoch  23 | Train Loss 0.3112 | Val MAE 0.3868 (best 0.3842)
+    Early stopping at epoch 23
+    Val  MAE avg: 0.3842 | Test MAE avg: 0.3507
+
+============================================================
+Running Strategy: TYPEEMB
+============================================================
+  Seed 42 ...
+    Epoch   1 | Train Loss 0.3222 | Val MAE 0.3899 (best inf)
+    Epoch   2 | Train Loss 0.3111 | Val MAE 0.3964 (best 0.3899)
+    Epoch   3 | Train Loss 0.3113 | Val MAE 0.3917 (best 0.3899)
+    Epoch   5 | Train Loss 0.3112 | Val MAE 0.3897 (best 0.3877)
+    Epoch   7 | Train Loss 0.3112 | Val MAE 0.3850 (best 0.3877)
+    Epoch   9 | Train Loss 0.3113 | Val MAE 0.3895 (best 0.3850)
+    Epoch  11 | Train Loss 0.3111 | Val MAE 0.3842 (best 0.3850)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3853 (best 0.3842)
+    Epoch  15 | Train Loss 0.3112 | Val MAE 0.3912 (best 0.3842)
+    Epoch  17 | Train Loss 0.3112 | Val MAE 0.3928 (best 0.3842)
+    Epoch  19 | Train Loss 0.3111 | Val MAE 0.3908 (best 0.3842)
+    Epoch  21 | Train Loss 0.3112 | Val MAE 0.3879 (best 0.3842)
+    Epoch  23 | Train Loss 0.3112 | Val MAE 0.3864 (best 0.3842)
+    Epoch  25 | Train Loss 0.3111 | Val MAE 0.3971 (best 0.3842)
+    Early stopping at epoch 26
+    Val  MAE avg: 0.3842 | Test MAE avg: 0.3502
+  Seed 123 ...
+    Epoch   1 | Train Loss 0.3224 | Val MAE 0.3884 (best inf)
+    Epoch   2 | Train Loss 0.3113 | Val MAE 0.3857 (best 0.3884)
+    Epoch   3 | Train Loss 0.3111 | Val MAE 0.3872 (best 0.3857)
+    Epoch   5 | Train Loss 0.3113 | Val MAE 0.3883 (best 0.3857)
+    Epoch   7 | Train Loss 0.3111 | Val MAE 0.3883 (best 0.3857)
+    Epoch   9 | Train Loss 0.3113 | Val MAE 0.3895 (best 0.3857)
+    Epoch  11 | Train Loss 0.3111 | Val MAE 0.3870 (best 0.3857)
+    Epoch  13 | Train Loss 0.3111 | Val MAE 0.3897 (best 0.3847)
+    Epoch  15 | Train Loss 0.3112 | Val MAE 0.3866 (best 0.3847)
+    Epoch  17 | Train Loss 0.3111 | Val MAE 0.3867 (best 0.3847)
+    Epoch  19 | Train Loss 0.3112 | Val MAE 0.3883 (best 0.3847)
+    Epoch  21 | Train Loss 0.3113 | Val MAE 0.3837 (best 0.3847)
+    Epoch  23 | Train Loss 0.3112 | Val MAE 0.3894 (best 0.3837)
+    Epoch  25 | Train Loss 0.3112 | Val MAE 0.3874 (best 0.3837)
+    Epoch  27 | Train Loss 0.3111 | Val MAE 0.3866 (best 0.3837)
+    Epoch  29 | Train Loss 0.3112 | Val MAE 0.3894 (best 0.3837)
+    Epoch  31 | Train Loss 0.3112 | Val MAE 0.3897 (best 0.3837)
+    Epoch  33 | Train Loss 0.3111 | Val MAE 0.3942 (best 0.3837)
+    Epoch  35 | Train Loss 0.3113 | Val MAE 0.3873 (best 0.3837)
+    Early stopping at epoch 36
+    Val  MAE avg: 0.3837 | Test MAE avg: 0.3497
+  Seed 777 ...
+    Epoch   1 | Train Loss 0.3218 | Val MAE 0.3885 (best inf)
+    Epoch   2 | Train Loss 0.3113 | Val MAE 0.3855 (best 0.3885)
+    Epoch   3 | Train Loss 0.3112 | Val MAE 0.3845 (best 0.3855)
+    Epoch   5 | Train Loss 0.3112 | Val MAE 0.3857 (best 0.3845)
+    Epoch   7 | Train Loss 0.3112 | Val MAE 0.3879 (best 0.3845)
+    Epoch   9 | Train Loss 0.3112 | Val MAE 0.3923 (best 0.3845)
+    Epoch  11 | Train Loss 0.3112 | Val MAE 0.3906 (best 0.3845)
+    Epoch  13 | Train Loss 0.3112 | Val MAE 0.3874 (best 0.3845)
+    Epoch  15 | Train Loss 0.3112 | Val MAE 0.3899 (best 0.3845)
+    Epoch  17 | Train Loss 0.3111 | Val MAE 0.3870 (best 0.3845)
+    Early stopping at epoch 18
+    Val  MAE avg: 0.3845 | Test MAE avg: 0.3507
+
+============================================================
+FINAL RESULTS ¡ª Linear Model
+============================================================
+Strategy       MAE-1h   MAE-3h   MAE-6h  MAE-avg  MAPE-1h  MAPE-3h  MAPE-6h  RMSE-1h  RMSE-3h  RMSE-6h
+--------------------------------------------------------------------------------------------------------
+general        0.1623   0.3355   0.4995   0.3511  207.01%  368.36%  386.89%   0.3417   0.6602   0.9027
+binary         0.1608   0.3367   0.4973   0.3504  207.90%  368.04%  398.48%   0.3403   0.6582   0.8985
+typeemb        0.1624   0.3374   0.4949   0.3502  204.34%  369.12%  395.74%   0.3416   0.6573   0.8996
+
+Ablation Deltas:
+  D1 (Binary - General) 1h: -0.0015
+  D1 (Binary - General) 3h: +0.0012
+  D1 (Binary - General) 6h: -0.0022
+  D2 (TypeEmb - Binary) 1h: +0.0016
+  D2 (TypeEmb - Binary) 3h: +0.0008
+  D2 (TypeEmb - Binary) 6h: -0.0024
