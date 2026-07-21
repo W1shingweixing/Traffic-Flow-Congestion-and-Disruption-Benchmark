@@ -1,0 +1,2 @@
+model,grouped_random_macro_f1,spatial_holdout_macro_f1,spatial_generalisation_gap
+1D-CNN,0.3430613814894065,0.3249868221604662,0.01807455932894031
