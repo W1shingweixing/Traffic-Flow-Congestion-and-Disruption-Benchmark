@@ -1,4 +1,4 @@
-# TRAFFIC FLOW, CONGESTION, AND DISRUPTION BENCHMARK
+# Traffic Flow, Congestion, And Disruption Benchmark
 
 This repository contains the materials, implementations, and documentation for the **Traffic Flow, Congestion, and Disruption Benchmark**.
 
