@@ -4,7 +4,7 @@ This repository contains the materials, implementations, and documentation for t
 
 The project is organized into the following branches:
 
-- **`nswtraffic2025`** — Contains the NSW traffic dataset used in this research.
+- **`nswtraffic2025`** — Contains the NSW datasets used in this research, including traffic data, incident records, road information, weather data, and other related data sources.
 - **`task1/2`** — Contains the implementation and documentation for:
   - **Task 1:** Traffic Forecasting
   - **Task 2:** Incident Classification
