@@ -1,0 +1,15 @@
+{
+  "d_model": 48,
+  "num_heads": 4,
+  "ff_dim": 96,
+  "dropout": 0.3,
+  "learning_rate": 0.0005,
+  "l2_strength": 0.0001,
+  "max_epochs": 300,
+  "batch_size": 64,
+  "early_stopping_patience": 25,
+  "reduce_lr_patience": 10,
+  "epochs_trained": 28,
+  "best_epoch": 3,
+  "best_validation_loss": 1.0921827554702759
+}
