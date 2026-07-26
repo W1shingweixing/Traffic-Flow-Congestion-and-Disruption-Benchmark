@@ -1,6 +1,6 @@
 # Local Causal Analysis
 
-This folder contains the workflow for **local traffic causal analysis** around a selected traffic incident. The workflow first constructs a local benchmark case from the benchmark dataset, then analyzes traffic changes and causal relationships using **PCMCI** and **Granger Causality** method.
+This folder contains the workflow for **local traffic causal analysis** around a selected traffic incident. The workflow first constructs a local benchmark case from the benchmark dataset, then analyzes traffic changes and historical lagged dependency relationships using **PCMCI**, followed by an optional **Granger causality** comparison for cross-method robustness assessment.
 
 ## Folder Structure
 
