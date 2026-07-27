@@ -1,0 +1,7 @@
+split_scheme,seed,max_depth,min_samples_leaf,min_samples_split,ccp_alpha,tree_depth,n_leaves
+Grouped-random,42,,5,20,0.0005,33,220
+Grouped-random,52,,5,10,0.0005,33,276
+Grouped-random,62,,5,10,0.0005,33,279
+Spatial holdout,42,,10,10,0.0,21,224
+Spatial holdout,52,,10,10,0.0,21,230
+Spatial holdout,62,,10,10,0.0,21,226
