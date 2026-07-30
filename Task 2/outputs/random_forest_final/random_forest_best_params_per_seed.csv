@@ -1,0 +1,7 @@
+split_scheme,seed,n_estimators,max_depth,min_samples_leaf,min_samples_split,max_features,class_weight
+Grouped-random,42,300,10.0,10,10,0.5,balanced
+Grouped-random,52,300,10.0,5,20,0.5,balanced_subsample
+Grouped-random,62,300,10.0,10,10,0.5,balanced_subsample
+Spatial holdout,42,300,,5,20,sqrt,balanced
+Spatial holdout,52,300,,5,10,sqrt,balanced_subsample
+Spatial holdout,62,300,20.0,5,20,0.5,balanced
