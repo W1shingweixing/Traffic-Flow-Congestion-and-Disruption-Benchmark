@@ -173,8 +173,8 @@ Results are saved in `results/` as JSON files with the following structure:
 | LSTM | 0.1721 | 0.1731 | 0.1733 | +0.0011 | +0.0002 |
 | Transformer | 0.1860 | 0.1850 | 0.1830 | −0.0010 | −0.0020 |
 | iTransformer | 0.2111 | 0.2078 | 0.2040 | −0.0034 | −0.0038 |
-| STGCN | * | * | * | * | * |
-| STSGCN | * | * | * | * | * |
+| STGCN | 0.6880 | 0.6880 | 0.6877 | +0.0000 | -0.0003 |
+| STSGCN | 0.6598 | 0.6613 | 0.6877 | +0.0016 | +0.0263 |
 
 *\*Results in progress.*
 
