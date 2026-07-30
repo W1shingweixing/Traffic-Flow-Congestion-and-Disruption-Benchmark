@@ -1,0 +1,61 @@
+split_scheme,feature,mean,std
+Grouped-random,cumulative_post_change,0.03550508,0.0025582192
+Grouped-random,logflow_m1,0.031476103,0.0010312365
+Grouped-random,logflow_m2,0.03391281,0.000578184
+Grouped-random,logflow_m3,0.034329798,0.0012466576
+Grouped-random,logflow_p1,0.032161098,9.993723e-05
+Grouped-random,logflow_p2,0.033752784,0.0004825265
+Grouped-random,logflow_p3,0.03217097,0.0005559678
+Grouped-random,logflow_t0,0.035865974,0.001693612
+Grouped-random,max_abs_change,0.035575315,0.0010057199
+Grouped-random,max_drop,0.03174216,0.00075425755
+Grouped-random,max_rise,0.03381582,0.00067796715
+Grouped-random,mean_shift,0.03428643,0.00041397964
+Grouped-random,onset_jump,0.03165074,0.00032695848
+Grouped-random,post_mean,0.03645039,0.0015591478
+Grouped-random,post_slope,0.034896087,0.0013857106
+Grouped-random,pre_mean,0.033072766,0.00047212292
+Grouped-random,pre_median,0.03604037,0.0010066972
+Grouped-random,pre_slope,0.031934455,0.001209073
+Grouped-random,relchg_m1,0.033117395,0.00070934615
+Grouped-random,relchg_m2,0.029638642,0.001104781
+Grouped-random,relchg_m3,0.030339656,0.0003229499
+Grouped-random,relchg_p1,0.03387609,0.0006175967
+Grouped-random,relchg_p2,0.03315371,0.0008158985
+Grouped-random,relchg_p3,0.032792393,0.0013402065
+Grouped-random,relchg_t0,0.03131242,0.000587552
+Grouped-random,window_max,0.03400393,0.0018118363
+Grouped-random,window_mean,0.0353229,0.00022032355
+Grouped-random,window_min,0.03099879,0.00016052825
+Grouped-random,window_range,0.033688698,0.00068252743
+Grouped-random,window_std,0.033116307,0.0016485879
+Spatial holdout,cumulative_post_change,0.033449065,0.0012972992
+Spatial holdout,logflow_m1,0.03175451,0.00062550284
+Spatial holdout,logflow_m2,0.033753872,0.0005252899
+Spatial holdout,logflow_m3,0.029476134,0.0016291317
+Spatial holdout,logflow_p1,0.03238726,0.0004886848
+Spatial holdout,logflow_p2,0.033802953,0.00037831595
+Spatial holdout,logflow_p3,0.031123564,0.0007411857
+Spatial holdout,logflow_t0,0.034272842,0.001326486
+Spatial holdout,max_abs_change,0.033521045,0.0011991316
+Spatial holdout,max_drop,0.033197522,0.001343621
+Spatial holdout,max_rise,0.03379372,0.0005296387
+Spatial holdout,mean_shift,0.03424235,0.00023420791
+Spatial holdout,onset_jump,0.029836236,0.00025029323
+Spatial holdout,post_mean,0.03669763,0.0019380786
+Spatial holdout,post_slope,0.033476222,0.0007966602
+Spatial holdout,pre_mean,0.036994237,0.00052180776
+Spatial holdout,pre_median,0.035290495,0.0014305639
+Spatial holdout,pre_slope,0.03229877,0.0010730763
+Spatial holdout,relchg_m1,0.0324579,0.0011628161
+Spatial holdout,relchg_m2,0.033746853,0.0006603789
+Spatial holdout,relchg_m3,0.03345856,0.0004711812
+Spatial holdout,relchg_p1,0.033336192,0.0005422311
+Spatial holdout,relchg_p2,0.03450542,0.0009470245
+Spatial holdout,relchg_p3,0.03290595,0.00047826546
+Spatial holdout,relchg_t0,0.03337827,0.00093640474
+Spatial holdout,window_max,0.032233674,0.00081189757
+Spatial holdout,window_mean,0.034751978,0.00056397414
+Spatial holdout,window_min,0.030306578,9.9345496e-05
+Spatial holdout,window_range,0.03407463,0.00029921168
+Spatial holdout,window_std,0.0354756,0.00033622218
