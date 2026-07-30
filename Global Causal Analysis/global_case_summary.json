@@ -1,0 +1,9 @@
+{
+  "n_stations": 115,
+  "n_days": 365,
+  "n_samples": 24455,
+  "n_variables": 26,
+  "n_meta_vars": 5,
+  "n_incident_vars": 18,
+  "n_traffic_vars": 3
+}
