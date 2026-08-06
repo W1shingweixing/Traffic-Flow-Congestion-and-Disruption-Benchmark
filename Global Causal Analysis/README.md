@@ -76,10 +76,6 @@ of the road network graph, so the 48 stations outside it carry NaN and are
 dropped: **17,520 rows (41.7%) removed, leaving 24,455 = 67 × 365**. This is the
 only source of NaN in the feature columns.
 
-> ⚠️ The thesis currently describes this as "67 × 365, no rows dropped for
-> missing data". That is only true *after* the station restriction — 17,520 rows
-> were in fact dropped at this step. Reword before final submission.
-
 **Alignment guarantee.** `global_variable_matrix.csv` is saved *after* the
 `dropna`, with `station_id` and `date` attached, so it is row-aligned with
 `global_X.npy`. This matters: the leave-station-out check in notebook 04 maps
